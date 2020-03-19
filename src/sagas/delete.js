@@ -1,12 +1,14 @@
 import axios from "axios";
 
-const fetchData = async () => {
-  const result = await axios.get(
-    "https://pigeon-backend-9909.herokuapp.com/procedure/delete"
+const deleteById = async id => {
+  console.log(`Deleting by id.. ${id}`);
+  const result = await axios.post(
+    "https://pigeon-backend-9909.herokuapp.com/procedure/delete",
+    id
   );
-  const procedreData = result.data.data;
-  console.log(procedreData);
-  return procedreData;
+  const data = result.data.data;
+  console.log(result);
+  return data;
 };
 
-export default fetchData;
+export default deleteById;
