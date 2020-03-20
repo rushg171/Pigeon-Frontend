@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ListProcedure from "./list-procedure";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
@@ -10,6 +12,8 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/Add";
+
 import { loadProcedure } from "../../actions";
 export const useStyles = makeStyles(theme => ({
   root: {
@@ -37,6 +41,9 @@ export const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3)
+  },
+  addButton: {
+    borderRadius: "50px"
   }
 }));
 
@@ -55,9 +62,22 @@ const Procedure = props => {
           <CardHeader
             className={classes.cardHeader}
             action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
+              <Fragment>
+                <Button
+                  className={classes.borderRadius}
+                  color="primary"
+                  startIcon={<AddIcon />}
+                  disableElevation
+                  component={Link}
+                  to={"/editor"}
+                  target="_blank"
+                >
+                  Add
+                </Button>
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
+              </Fragment>
             }
             subheader="Name"
           />

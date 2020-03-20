@@ -1,6 +1,8 @@
 import React from "react";
 import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { loadProcedure } from "../actions";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -14,8 +16,8 @@ import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import Icon from "@material-ui/core/Icon";
-import { connect } from "react-redux";
-import { loadProcedure } from "../actions";
+import Button from "@material-ui/core/Button";
+import logo01 from "../logo/logo01.png";
 
 const drawerWidth = 240;
 
@@ -44,6 +46,11 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     textDecoration: "none"
+  },
+  logo: {
+    position: "absolute",
+    height: "40px",
+    width: "40px"
   }
 }));
 
@@ -100,7 +107,11 @@ const Menu = props => {
         anchor="left"
       >
         <List>
-          <ListSubheader>Logo</ListSubheader>
+          <ListSubheader>
+            <Button component={Link} to={"/"} title="Pigeon">
+              <img className={classes.logo} src={logo01} alt={"LOGO"} />
+            </Button>
+          </ListSubheader>
           <Divider />
           {menu.map((m, index) => {
             return (

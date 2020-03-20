@@ -7,7 +7,8 @@ import {
   Procedure,
   Project,
   Settings,
-  Tasks
+  Tasks,
+  Editor
 } from "../components";
 import Menu from "./Layouts";
 
@@ -29,6 +30,7 @@ export default class App extends Component {
             <Route path="/members" component={Members} />
             <Route path="/tasks" component={Tasks} />
             <Route path="/settings" component={Settings} />
+            <Route path="/editor" component={Editor} />
           </Switch>
         </div>
       </div>

@@ -2,7 +2,6 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { createPortal } from "react-dom";
 
 export const useStyles = makeStyles(theme => ({
   root: {
