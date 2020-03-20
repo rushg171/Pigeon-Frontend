@@ -50,11 +50,17 @@ const useStyles = makeStyles(theme => ({
   logo: {
     position: "absolute",
     height: "40px",
-    width: "40px"
+    width: "40px",
+    left: theme.spacing(10)
   }
 }));
 
 const menu = [
+  {
+    title: "",
+    logo: "",
+    link: "/"
+  },
   {
     title: "Dashboard",
     logo: "speedOutlined",
