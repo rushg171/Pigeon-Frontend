@@ -5,10 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import rootSaga from "../sagas";
 
 const saga = createSagaMiddleware();
-const store = createStore(
-  rootReducer,
-  compose(applyMiddleware(saga), composeWithDevTools())
-);
+const store = createStore(rootReducer, compose(applyMiddleware(saga)));
 saga.run(rootSaga);
 // store.dispatch({ type: "PROCEDURE_DELETE", id: "5e4428f98ddbdc2f70fbee71" });
 
